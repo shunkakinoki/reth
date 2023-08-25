@@ -19,9 +19,16 @@ reth-net-common = { path = "../common" }
 reth-net-nat = { path = "../nat" }
 
 # ethereum
-discv5 = { git = "https://github.com/sigp/discv5" }
-secp256k1 = { workspace = true, features = ["global-context", "rand-std", "recovery", "serde"] }
-enr = { workspace = true, default-features = false, features = ["rust-secp256k1"] }
+discv5 = { git = "https://github.com/sigp/discv5", rev = "a9f1e99321aec746fb9d6e8df889aa515a5e1254" }
+secp256k1 = { workspace = true, features = [
+    "global-context",
+    "rand-std",
+    "recovery",
+    "serde",
+] }
+enr = { workspace = true, default-features = false, features = [
+    "rust-secp256k1",
+] }
 
 # async/futures
 tokio = { workspace = true, features = ["io-util", "net", "time"] }
